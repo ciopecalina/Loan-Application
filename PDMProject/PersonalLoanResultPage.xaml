@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.PersonalLoanResultPage">
+    <ContentPage.Content>
+        <ScrollView>
+            
+            <StackLayout Padding="15">
+                <Label Text="Personal Loan" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+                <Label x:Name="LabelCurrency" Text="Currency RON" HorizontalOptions="Center"/>
+                <StackLayout Padding="25"/>
+                <Label Text="Principal Amount" FontSize="20" HorizontalOptions="Start" />
+                <Entry x:Name="EntryPrincipalAmount" IsReadOnly="True"/>
+
+                <Label Text="Total Payable Interest" FontSize="20" HorizontalOptions="Start" />
+                <Entry x:Name="EntryTotalInterest" IsReadOnly="True"/>
+
+                <Label Text="Total Payable = Principal + Interest" FontSize="20" HorizontalOptions="Start" />
+                <Entry x:Name="EntryPayable" IsReadOnly="True"/>
+
+                <Label Text="EMI Amount (Monthly Installment)" FontSize="20" HorizontalOptions="Start" />
+                <Entry x:Name="EntryEMIAmount" IsReadOnly="True"/>
+
+                <StackLayout VerticalOptions="FillAndExpand"/>
+
+                <Button Clicked="Button_Save_Data" Text="Sava Data"/>
+            </StackLayout>
+
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

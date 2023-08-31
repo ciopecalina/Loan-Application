@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.SelectionPage">
+    <ContentPage.Content>
+        <StackLayout>
+        <StackLayout Padding="20">
+                <Label Text="Selection Menu" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+                <StackLayout Padding="20"/>
+            <Label Text="Please select the loan type" FontSize="20" HorizontalOptions="Start" />
+
+            <StackLayout RadioButtonGroup.GroupName="loans">
+                <RadioButton Content="Personal Loan" CheckedChanged="RadioButton_Personal_Loan" IsChecked="True"/>
+                <RadioButton Content="House Loan" CheckedChanged="RadioButton_House_Loan"/>
+                <RadioButton Content="Car Loan" CheckedChanged="RadioButton_Car_Loan"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand"/>
+            <Button Text="NEXT" VerticalOptions="End" Clicked="Button_Next"/>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Padding="0,15,0,0">
+
+                    <OnPlatform x:TypeArguments="View" >
+                        <On Platform ="Android">
+                            <StackLayout >
+                                <Image Source="selection.jpg"  Scale="0.9" />
+                            </StackLayout>
+                        </On>
+                        <On Platform ="UWP">
+                            <Image Source="Assets/selection.jpg" Scale="0.9"/>
+                        </On>
+                    </OnPlatform>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

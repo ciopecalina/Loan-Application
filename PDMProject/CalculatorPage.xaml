@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.CalculatorPage">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="Calculator" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+            <Label x:Name="LoanLabel" Text="Personal Loan" FontSize="20" HorizontalOptions="Center" />
+            <StackLayout Padding="30"/>
+            <Label x:Name="LabelLoanAmount" Text="Loan Amount (RON)" FontSize="20" HorizontalOptions="Start" />
+            <Entry x:Name="EntryAmount"/>
+
+            <StackLayout Padding="10"/>
+            <Label Text="Interest Rate (%)" FontSize="20" HorizontalOptions="Start" />
+            <Entry x:Name="EntryRate"/>
+
+            <StackLayout Padding="10"/>
+            <Label Text="Loan Tenure (Yrs)" FontSize="20" HorizontalOptions="Start" />
+            <Entry x:Name="EntryTenure"/>
+
+            <StackLayout VerticalOptions="FillAndExpand"/>
+
+            <Button Text="Calculate" Clicked="Button_Calculate"/>
+            <Button Text="Clear Form" Clicked="Button_Clear"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

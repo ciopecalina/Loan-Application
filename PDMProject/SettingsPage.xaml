@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Settings"  FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+            <Label Text="Here you can set the default currency." Padding="0,30,0,0" FontSize="20" HorizontalOptions="Start" />
+            <Picker SelectedIndexChanged="picker_currency" x:Name="picker" VerticalOptions="Center"
+                Title="Select a default currency"
+                TitleColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>RON</x:String>
+                        <x:String>EUR</x:String>
+                        <x:String>USD</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                
+            </Picker>
+
+            <Label Text="And you can also delete the history by clicking the following button." Padding="0,15,0,0" FontSize="20" HorizontalOptions="Start" />
+            <Button Clicked="Button_Delete_History" Text="Delete History"/>
+            <StackLayout VerticalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="CenterAndExpand">
+
+                <OnPlatform x:TypeArguments="View" >
+                    <On Platform ="Android">
+                        <StackLayout >
+                            <Image Source="settings.png"  Scale="0.5" />
+                        </StackLayout>
+                    </On>
+                    <On Platform ="UWP">
+                        <Image Source="Assets/settings.png" Scale="0.5"/>
+                    </On>
+                </OnPlatform>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

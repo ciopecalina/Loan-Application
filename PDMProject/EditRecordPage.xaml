@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.EditRecordPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Edit record" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+                    <Label x:Name="LoanLabel" Text="Personal Loan" FontSize="20" HorizontalOptions="Center" />
+                    <Label Text="This is the initial loan. You can change it by editing the Loan Amount, Interest Rate and the Loan Tenure." FontSize="20" HorizontalOptions="Start" />
+                    <StackLayout Orientation="Vertical" Padding="15"/>
+                    <Label x:Name="LabelLoanAmount" Text="Loan Amount (RON)" FontSize="20" HorizontalOptions="Start" />
+                    <Entry x:Name="EntryAmount"/>
+                    <Label Text="Interest Rate (%)" FontSize="20" HorizontalOptions="Start" />
+                    <Entry x:Name="EntryRate"/>
+                    <Label Text="Loan Tenure (Yrs)" FontSize="20" HorizontalOptions="Start" />
+                    <Entry x:Name="EntryTenure"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="These are the initial results." FontSize="20" HorizontalOptions="Start" />
+
+                            <Label Text="Total Payable Interest" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="OldEntryTotalInterest" IsReadOnly="True"/>
+
+                            <Label Text="Total Payable = Principal + Interest" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="OldEntryPayable" IsReadOnly="True"/>
+
+                            <Label Text="EMI Amount (Monthly Installment)" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="OldEntryEMIAmount" IsReadOnly="True"/>
+                            <StackLayout VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  Margin="35" HeightRequest="35" WidthRequest="90">
+                            <Button Text="Recalculate" Clicked="Button_Calculate"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Total Payable Interest" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="EntryTotalInterest" IsReadOnly="True"/>
+
+                            <Label Text="Total Payable = Principal + Interest" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="EntryPayable" IsReadOnly="True"/>
+
+                            <Label Text="EMI Amount (Monthly Installment)" FontSize="20" HorizontalOptions="Start" />
+                            <Entry x:Name="EntryEMIAmount" IsReadOnly="True"/>
+
+                            <StackLayout VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Button Text="Override existing entry" Clicked="Button_Override" Margin="35" HeightRequest="35" WidthRequest="180"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

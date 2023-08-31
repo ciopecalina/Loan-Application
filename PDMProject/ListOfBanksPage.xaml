@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMProject.ListOfBanksPage">
+    <ContentPage.Content>
+
+        <StackLayout Padding="15" VerticalOptions="FillAndExpand">
+            <Label Text="Banks" FontSize="40" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+            <Label Text="This is the list with all the banks in Bucharest." HorizontalOptions="Center"/>
+            <ListView x:Name="listViewBanks" RowHeight="190" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation = "Vertical" >
+                                    <StackLayout Orientation = "Horizontal">
+                                        <StackLayout Orientation = "Vertical">
+                                            <OnPlatform x:TypeArguments="View">
+                                                <On Platform ="Android, iOS" >
+                                                    <Image Source="{Binding Logo}"/>
+                                                </On>
+                                                <On Platform ="UWP">
+                                                    <Image Source="{Binding Logo, StringFormat='Assets/{0}'}"/>
+                                                </On>
+                                            </OnPlatform>
+                                        </StackLayout>
+                                        <StackLayout Orientation = "Vertical">
+
+                                            <Label Text="{Binding Name}" FontAttributes="Bold,Italic"/>
+                                            <Label Text=""/>
+                                            <Label Text="{Binding Adress, StringFormat='Adress: {0}'}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation = "Vertical">
+                                        <Label Text="{Binding Telephone, StringFormat='Tel.: {0}'}"/>
+                                        <Label Text="{Binding Email, StringFormat='Email: {0}'}"/>
+                                        <Label Text="{Binding Web, StringFormat='Web: {0}'}"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <Button x:Name="BtnRefresh" Text="Refresh" Clicked="BtnRefresh_Refresh" IsVisible="false"/>
+            <Label x:Name="LabelLoading" Text="Loading..." HorizontalOptions="Center" FontSize="20"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
